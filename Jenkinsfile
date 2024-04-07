@@ -3,12 +3,14 @@ pipeline {
   stages {
     stage('stage1') {
       steps {
-        echo 'Olá mundo, eu sou a pipeline de número: $BUILD_NUMBER'
+        sh '''echo "Esse é meu script"
+echo "Número: $BUILD_NUMBER"
+echo "Demo: $DEMO"'''
       }
     }
 
   }
   environment {
-    DEMO = '2'
+    DEMO = '1'
   }
 }
